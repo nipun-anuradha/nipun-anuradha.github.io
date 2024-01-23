@@ -1,0 +1,95 @@
+body{
+	margin:0;
+}
+/* Style the background image */
+.background {
+	background-image: url("background1.jpg");
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+
+/* Style the overlay to create a translucent effect */
+.overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+/* Style the content to appear on top of the overlay */
+.content {
+	font-family: sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	color: white;
+	text-align: center;
+}
+
+/* Style the heading */
+.content h1 {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+/* Style the paragraph */
+.content p {
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+	margin: 0 auto;
+	max-width: 60rem;
+	padding: 0 2rem;
+}
+
+/* Create a pulsing animation for the overlay */
+.overlay:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	width: 20rem;
+	height: 20rem;
+	border: 0.5rem solid rgba(255, 255, 255, 0.2);
+	animation: pulse 2s linear infinite;
+	z-index: -1;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px; /* adjust the height to match your footer content */
+  background-color: #333;
+  color: #fff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+/* Define the pulsing animation */
+@keyframes pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 0.7;
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.3);
+		opacity: 0.3;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 0.7;
+	}
+}
+
